@@ -12,13 +12,13 @@ import (
 
 func main() {
 	var chat_id int64
-	chat_id = 123444444444444 //important ! changeto your receiver chat_id
+	chat_id = 123444444444444 //important ! change to your receiver chat_id
 	trd := sendMessage("Yes i'am talking to you!", chat_id, "<put you bot key here>")
 	fmt.Println("Message sent ? " + strconv.FormatBool(trd.Ok))
 	fmt.Println("Sender : " + trd.Result.From.Username)
 	fmt.Println("Date : " + time.Unix(trd.Result.Date, 0).String()) //converting unix time to local time
 	fmt.Println("Message : " + trd.Result.Text)
-	tud := getUpdates("<put you bot key here>", 1) // getting only the last message push
+	tud := getUpdates("<put you bot key here>", 1) // getting only the last message 
 	for _, msg := range tud.Result {
 		fmt.Println(msg.Message.From.FirstName + ":" + msg.Message.Text)
 
